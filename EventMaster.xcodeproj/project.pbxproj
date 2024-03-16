@@ -8,19 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		50D912F82BA41593000F7D92 /* EventMasterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D912F72BA41593000F7D92 /* EventMasterApp.swift */; };
-		50D912FA2BA41593000F7D92 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D912F92BA41593000F7D92 /* ContentView.swift */; };
-		50D912FC2BA41593000F7D92 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D912FB2BA41593000F7D92 /* Item.swift */; };
+		50D912FA2BA41593000F7D92 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D912F92BA41593000F7D92 /* HomeView.swift */; };
 		50D912FE2BA41596000F7D92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50D912FD2BA41596000F7D92 /* Assets.xcassets */; };
 		50D913012BA41596000F7D92 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50D913002BA41596000F7D92 /* Preview Assets.xcassets */; };
+		50D9130C2BA4165A000F7D92 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D9130B2BA4165A000F7D92 /* Event.swift */; };
+		50D9130E2BA41664000F7D92 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D9130D2BA41664000F7D92 /* User.swift */; };
+		50D913102BA4167E000F7D92 /* EventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D9130F2BA4167E000F7D92 /* EventCardView.swift */; };
+		50D913122BA41755000F7D92 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D913112BA41755000F7D92 /* LoginView.swift */; };
+		50D913142BA418CE000F7D92 /* FancyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D913132BA418CE000F7D92 /* FancyTextField.swift */; };
+		50D913162BA58607000F7D92 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D913152BA58607000F7D92 /* RegisterView.swift */; };
+		50D913192BA5F5A7000F7D92 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D913182BA5F5A7000F7D92 /* UserManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		50D912F42BA41593000F7D92 /* EventMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50D912F72BA41593000F7D92 /* EventMasterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMasterApp.swift; sourceTree = "<group>"; };
-		50D912F92BA41593000F7D92 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		50D912FB2BA41593000F7D92 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		50D912F92BA41593000F7D92 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		50D912FD2BA41596000F7D92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50D913002BA41596000F7D92 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		50D9130B2BA4165A000F7D92 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		50D9130D2BA41664000F7D92 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		50D9130F2BA4167E000F7D92 /* EventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
+		50D913112BA41755000F7D92 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		50D913132BA418CE000F7D92 /* FancyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancyTextField.swift; sourceTree = "<group>"; };
+		50D913152BA58607000F7D92 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		50D913182BA5F5A7000F7D92 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +66,9 @@
 			isa = PBXGroup;
 			children = (
 				50D912F72BA41593000F7D92 /* EventMasterApp.swift */,
-				50D912F92BA41593000F7D92 /* ContentView.swift */,
-				50D912FB2BA41593000F7D92 /* Item.swift */,
+				50D913092BA415F4000F7D92 /* Views */,
+				50D913082BA415E1000F7D92 /* Services */,
+				50D913072BA415D9000F7D92 /* Models */,
 				50D912FD2BA41596000F7D92 /* Assets.xcassets */,
 				50D912FF2BA41596000F7D92 /* Preview Content */,
 			);
@@ -68,6 +81,43 @@
 				50D913002BA41596000F7D92 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		50D913072BA415D9000F7D92 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				50D9130B2BA4165A000F7D92 /* Event.swift */,
+				50D9130D2BA41664000F7D92 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		50D913082BA415E1000F7D92 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				50D913172BA5F58E000F7D92 /* New Group */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		50D913092BA415F4000F7D92 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				50D912F92BA41593000F7D92 /* HomeView.swift */,
+				50D9130F2BA4167E000F7D92 /* EventCardView.swift */,
+				50D913112BA41755000F7D92 /* LoginView.swift */,
+				50D913132BA418CE000F7D92 /* FancyTextField.swift */,
+				50D913152BA58607000F7D92 /* RegisterView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		50D913172BA5F58E000F7D92 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				50D913182BA5F5A7000F7D92 /* UserManager.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,6 +164,9 @@
 				Base,
 			);
 			mainGroup = 50D912EB2BA41593000F7D92;
+			packageReferences = (
+				50D9130A2BA41647000F7D92 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 50D912F52BA41593000F7D92 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,9 +193,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50D912FA2BA41593000F7D92 /* ContentView.swift in Sources */,
-				50D912FC2BA41593000F7D92 /* Item.swift in Sources */,
+				50D913192BA5F5A7000F7D92 /* UserManager.swift in Sources */,
+				50D913122BA41755000F7D92 /* LoginView.swift in Sources */,
+				50D9130E2BA41664000F7D92 /* User.swift in Sources */,
+				50D912FA2BA41593000F7D92 /* HomeView.swift in Sources */,
+				50D9130C2BA4165A000F7D92 /* Event.swift in Sources */,
+				50D913142BA418CE000F7D92 /* FancyTextField.swift in Sources */,
+				50D913162BA58607000F7D92 /* RegisterView.swift in Sources */,
 				50D912F82BA41593000F7D92 /* EventMasterApp.swift in Sources */,
+				50D913102BA4167E000F7D92 /* EventCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +407,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		50D9130A2BA41647000F7D92 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.22.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 50D912EC2BA41593000F7D92 /* Project object */;
 }

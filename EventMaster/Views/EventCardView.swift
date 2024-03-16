@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct EventCardView : View {
+    var body: some View {
+        VStack {
+            
+        }
+    }
+}
