@@ -6,3 +6,28 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct EventDetailView : View {
+    @Binding var event: Event
+    
+    var body: some View {
+        VStack {
+            
+        }
+    }
+}
+struct Preview : View {
+    @State var event = Event(
+        image: UIImage(named: "Placeholder")!.pngData()!,
+        name: "Tryouts",
+        desc: "Tryouts for sports",
+        date: Date.now.description
+    )
+    var body: some View {
+        EventDetailView(event: $event)
+    }
+}
+#Preview {
+    Preview()
+}

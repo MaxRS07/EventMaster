@@ -1,5 +1,5 @@
 {
-  "originHash" : "c63c63846d9c539229e96de38d6af51417e28c0ee9a0bc48bd0f0f19d923c329",
+  "originHash" : "d8d03f43b89a67514f92f9c2c780af1cd4a29bd78a94dee8d7d9b17c51de340d",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -17,6 +17,42 @@
       "state" : {
         "revision" : "3e464dad87dad2d29bb29a97836789bf0f8f67d2",
         "version" : "10.18.1"
+      }
+    },
+    {
+      "identity" : "bcrypt",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vapor-community/bcrypt.git",
+      "state" : {
+        "revision" : "a36b6f0381f2edb9fb32b8882ebc801ba8db10ef",
+        "version" : "1.1.1"
+      }
+    },
+    {
+      "identity" : "bits",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vapor/bits.git",
+      "state" : {
+        "revision" : "03079476b04139a8b744ad96f975176df5ae12bc",
+        "version" : "1.1.1"
+      }
+    },
+    {
+      "identity" : "core",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vapor/core.git",
+      "state" : {
+        "revision" : "aa15871311b497a24a7f0e96b1ae6865dd600818",
+        "version" : "2.2.1"
+      }
+    },
+    {
+      "identity" : "debugging",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vapor/debugging.git",
+      "state" : {
+        "revision" : "fc5a27d6eb236141dc24e5f14eedaa2e035ae7b3",
+        "version" : "1.1.1"
       }
     },
     {
@@ -107,6 +143,15 @@
       "state" : {
         "revision" : "540318ecedd63d883069ae7f1ed811a2df00b6ac",
         "version" : "2.4.0"
+      }
+    },
+    {
+      "identity" : "random",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vapor/random.git",
+      "state" : {
+        "revision" : "d7c4397d125caba795d14d956efacfe2a27a63d0",
+        "version" : "1.2.0"
       }
     },
     {

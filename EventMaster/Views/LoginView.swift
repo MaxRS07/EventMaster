@@ -29,7 +29,6 @@ struct LoginView : View {
                     
                     FancyTextField(text: $password, placeholder: "Password", width: 260, secure: true, icon: .init(systemName: "lock"))
                         .padding(.bottom, 25)
-                    
                     Button {
                         //login
                     } label: {
@@ -48,9 +47,7 @@ struct LoginView : View {
                             .foregroundStyle(Color(uiColor: .systemGray5))
                     }
                     .padding(.bottom, 10)
-                    Button {
-                        //login
-                    } label: {
+                    NavigationLink(destination: RegisterView()) {
                         Text("Register")
                             .padding(.horizontal, 30)
                             .padding(.vertical, 6)
