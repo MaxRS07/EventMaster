@@ -9,13 +9,20 @@ import Foundation
 import SwiftUI
 
 struct EventScrollView : View {
+    
+    @State var events : [Event] = []
+    
     var body: some View {
-        @State var events : [Event] = []
         HStack {
             ScrollView(.horizontal) {
-                ForEach($events) { e in
-                    EventCard(event: e)
+                VStack {
+                    ForEach($events) { e in
+                        NavigationLink(destination: EventDetailView(event: e)) {
+                            EventCard(event: e)
+                        }
+                    }
                 }
+                .padding()
             }
         }
     }

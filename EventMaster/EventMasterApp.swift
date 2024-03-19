@@ -12,18 +12,24 @@ import FirebaseCore
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    FirebaseApp.configure()
-
     return true
   }
 }
 
 @main
 struct EventMasterApp: App {
-
+    @StateObject var userAuth = UserAuth()
+    init() {
+        FirebaseApp.configure()
+    }
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            if userAuth.authState == .loggedIn {
+                HomeView()
+            } else if userAuth.authState == .loggedOut {
+                LoginView()
+            }
         }
+        .environmentObject(userAuth)
     }
 }

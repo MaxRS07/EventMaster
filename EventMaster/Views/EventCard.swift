@@ -14,7 +14,8 @@ struct EventCard : View {
         VStack {
             Image(uiImage: .init(data: event.image)!)
                 .resizable()
-                .frame(height: 100)
+                .aspectRatio(contentMode: .fit)
+                //.frame(height: 100)
             HStack {
                 Text(event.name)
                     .padding(.leading)
@@ -28,24 +29,58 @@ struct EventCard : View {
             }
             Spacer()
         }
-        .frame(width: 150, height: 200)
+        .frame(width: 160, height: 170)
         .background(.white)
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .clipped()
         .shadow(radius: 8)
     }
 }
-struct Previews : View {
+struct EventSearchCard : View {
+    @Binding var event: Event
+    var body: some View {
+        HStack {
+            Image(uiImage: .init(data: event.image)!)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 130)
+            VStack {
+                HStack {
+                    Text(event.name)
+                        .padding(.top, 18)
+                        .font(.title3)
+                    Spacer()
+                }
+                HStack {
+                    Text(event.desc)
+                        .font(.body)
+                    Spacer()
+                }
+                Spacer()
+            }
+        }
+        .frame(width: 300, height: 120)
+        .background(.white)
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .shadow(radius: 8)
+    }
+}
+struct CardPreviews : View {
     @State var event = Event(
         image: UIImage(named: "Placeholder")!.pngData()!,
         name: "Tryouts",
         desc: "Tryouts for sports",
-        date: Date.now.description
+        date: Date.now.description,
+        location: "Room 504"
     )
     var body: some View {
-        EventCard(event: $event)
+        VStack {
+            EventCard(event: $event)
+                .padding()
+            EventSearchCard(event: $event)
+        }
     }
 }
 #Preview {
-    Previews()
+    CardPreviews()
 }

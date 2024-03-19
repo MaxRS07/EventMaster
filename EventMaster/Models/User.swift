@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseAuth
 
 struct User : Codable, Identifiable {
     @DocumentID var id: String?

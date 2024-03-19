@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestore
 
-class UserManager {
+public class UserManager {
     
     private static let users = Firestore.firestore().collection("users")
     

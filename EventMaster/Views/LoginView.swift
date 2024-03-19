@@ -7,12 +7,15 @@
 
 import Foundation
 import SwiftUI
+import FirebaseCore
 
 struct LoginView : View {
-    
+    @EnvironmentObject var authManager : UserAuth
     
     @State var username: String = ""
     @State var password: String = ""
+    
+    @State var authenticated: Bool = true
     
     var body: some View {
         NavigationView {
@@ -30,15 +33,24 @@ struct LoginView : View {
                     FancyTextField(text: $password, placeholder: "Password", width: 260, secure: true, icon: .init(systemName: "lock"))
                         .padding(.bottom, 25)
                     Button {
-                        //login
+                        Task {
+                            authenticated = await authManager.login(
+                                username: username,
+                                password: password
+                            )
+                        }
                     } label: {
                         Text("Login")
                             .padding(.horizontal, 30)
                         
                     }
                     .buttonStyle(.borderedProminent)
-                    .padding(.bottom, 10)
                     
+                    Text("Incorrect username or password")
+                        .foregroundStyle(.red)
+                        .font(.system(size: 12))
+                        .opacity(authenticated ? 0 : 1)
+                        .padding(.bottom, 10)
                     HStack {
                         Rectangle().frame(width: 111, height: 1)
                             .foregroundStyle(Color(uiColor: .systemGray5))
@@ -47,7 +59,7 @@ struct LoginView : View {
                             .foregroundStyle(Color(uiColor: .systemGray5))
                     }
                     .padding(.bottom, 10)
-                    NavigationLink(destination: RegisterView()) {
+                    NavigationLink(destination: RegisterView(userAuth: authManager)) {
                         Text("Register")
                             .padding(.horizontal, 30)
                             .padding(.vertical, 6)

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct FancyTextField : View {
+public struct FancyTextField : View {
     
     @Binding var text: String
     @State var placeholder: String
@@ -21,7 +21,7 @@ struct FancyTextField : View {
     
     @State private var editing : Bool = false
     
-    var body: some View {
+    public var body: some View {
         VStack {
             HStack {
                 if secure {
