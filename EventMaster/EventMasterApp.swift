@@ -25,7 +25,7 @@ struct EventMasterApp: App {
     var body: some Scene {
         WindowGroup {
             if userAuth.authState == .loggedIn {
-                HomeView()
+                ContentView()
             } else if userAuth.authState == .loggedOut {
                 LoginView()
             }

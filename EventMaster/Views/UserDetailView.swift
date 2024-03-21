@@ -6,3 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct ProfileView : View {
+    @EnvironmentObject var userAuth : UserAuth
+    var body: some View {
+        VStack {
+            
+        }
+    }
+}

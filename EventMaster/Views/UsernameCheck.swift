@@ -15,7 +15,7 @@ struct UsernameCheck : View {
     
     var body: some View {
         HStack {
-            if avalible == nil || !(6...20).contains(username.count) {
+            if !(6...20).contains(username.count) {
                 Text("Username must be between 6 and 20 characters")
                     .foregroundStyle(Color(uiColor: .systemGray4))
             }
@@ -32,15 +32,14 @@ struct UsernameCheck : View {
             }
             Spacer()
         }
+        .opacity(avalible == nil ? 0 : 1)
         .font(.system(size: 11))
         .foregroundStyle(Color(uiColor: .systemGray4))
         .multilineTextAlignment(.leading)
-        .onChange(of: username) { (username, _) in
-            
+        .onChange(of: username) {
+            checking = true
             Task {
-                checking = true
-                let taken = await UserManager.fetchUser(username: username) == nil
-                avalible = taken
+                avalible = await UserManager.fetchUser(username: username) == nil
                 checking = false
             }
         }

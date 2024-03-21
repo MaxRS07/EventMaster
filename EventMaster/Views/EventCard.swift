@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct EventCard : View {
-    @Binding var event : Event
+    @State var event : Event
     var body: some View {
         VStack {
             Image(uiImage: .init(data: event.image)!)
@@ -37,7 +37,7 @@ struct EventCard : View {
     }
 }
 struct EventSearchCard : View {
-    @Binding var event: Event
+    @State var event: Event
     var body: some View {
         HStack {
             Image(uiImage: .init(data: event.image)!)
@@ -59,7 +59,7 @@ struct EventSearchCard : View {
                 Spacer()
             }
         }
-        .frame(width: 300, height: 120)
+        .frame(width: 350, height: 120)
         .background(.white)
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .shadow(radius: 8)
@@ -71,13 +71,14 @@ struct CardPreviews : View {
         name: "Tryouts",
         desc: "Tryouts for sports",
         date: Date.now.description,
-        location: "Room 504"
+        location: "Room 504", 
+        hosts: []
     )
     var body: some View {
         VStack {
-            EventCard(event: $event)
+            EventCard(event: event)
                 .padding()
-            EventSearchCard(event: $event)
+            EventSearchCard(event: event)
         }
     }
 }

@@ -9,7 +9,8 @@ import Foundation
 import SwiftUI
 
 struct EventDetailView : View {
-    @Binding var event: Event
+    @State var event: Event
+    @EnvironmentObject var userAuth: UserAuth
     
     var body: some View {
         GeometryReader { geo in
@@ -26,6 +27,7 @@ struct EventDetailView : View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: width * 0.8)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .padding(.bottom)
                     HStack {
                         Text(event.desc)
                             .padding(.bottom)
@@ -34,29 +36,33 @@ struct EventDetailView : View {
                         Spacer()
                     }
                     HStack {
+                        Spacer()
                         Text(event.date)
                         Divider()
                         Text(event.location)
+                        Divider()
+                        VStack {
+                            ForEach(event.hosts, id: \.self) { host in
+                                Text(host)
+                            }
+                        }
+                        Spacer()
                     }
+                    .frame(height: height * 0.05)
+                    .padding()
+                    HStack {
+                        Button {
+                            
+                        } label: {
+                            Text("Register")
+                        }
+                        .buttonStyle(.borderedProminent)
+                    }
+                    EventCalendar(observedDate: Date.decode(date: event.date)!)
                     Spacer()
                 }
                 Spacer()
             }
         }
     }
-}
-struct Preview : View {
-    @State var event = Event(
-        image: UIImage(named: "Placeholder")!.pngData()!,
-        name: "Tryouts",
-        desc: "Tryouts for sports",
-        date: Date.now.formatDate(format: "MMM d, h:mm a"),
-        location: "Room 504"
-    )
-    var body: some View {
-        EventDetailView(event: $event)
-    }
-}
-#Preview {
-    Preview()
 }

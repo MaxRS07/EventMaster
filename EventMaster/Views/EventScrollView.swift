@@ -9,14 +9,14 @@ import Foundation
 import SwiftUI
 
 struct EventScrollView : View {
-    
+    @EnvironmentObject var userAuth : UserAuth
     @State var events : [Event] = []
     
     var body: some View {
         HStack {
             ScrollView(.horizontal) {
                 VStack {
-                    ForEach($events) { e in
+                    ForEach(events) { e in
                         NavigationLink(destination: EventDetailView(event: e)) {
                             EventCard(event: e)
                         }
@@ -26,7 +26,4 @@ struct EventScrollView : View {
             }
         }
     }
-}
-#Preview {
-    EventScrollView()
 }

@@ -25,12 +25,19 @@ public class UserManager {
         ]
         users.addDocument(data: userData)
     }
+    static func fetchUsers() async -> [User] {
+        guard let query = try? await users.getDocuments() else {return []}
+        return query.documents.map({try! $0.data(as: User.self)})
+    }
     static func fetchUser(id: String) async -> User? {
         return try? await users.document(id).getDocument().data(as: User.self)
     }
     static func fetchUser(username: String) async -> User? {
         let query = users.whereField("username", isEqualTo: username)
-        
+        return try? await query.getDocuments().documents.first?.data(as: User.self)
+    }
+    static func fetchUser(email: String) async -> User? {
+        let query = users.whereField("email", isEqualTo: email)
         return try? await query.getDocuments().documents.first?.data(as: User.self)
     }
 }

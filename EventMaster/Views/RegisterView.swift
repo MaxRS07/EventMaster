@@ -11,7 +11,7 @@ import SwiftUI
 struct RegisterView : View {
     @Environment(\.presentationMode) var presentationMode
     
-    @State var userAuth : UserAuth
+    @EnvironmentObject var userAuth : UserAuth
     @State var email : String = ""
     @State var username : String = ""
     @State var password : String = ""
@@ -40,6 +40,7 @@ struct RegisterView : View {
                 FancyTextField(text: $email, placeholder: "Email", width: 260, icon: .init(systemName: "envelope"))
                     .padding(.bottom, 5)
                 EmailCheck(email: $email)
+                    .padding(.bottom, 3)
                 
                 FancyTextField(text: $username, placeholder: "Username", width: 260, icon: .init(systemName: "person"))
                     .padding(.bottom, 5)
@@ -53,26 +54,45 @@ struct RegisterView : View {
                     .padding(.bottom, 25)
                 
                 Button {
-                    if (
-                        email.range(of: "([0-9]){6}@hkis.edu.hk", options: .regularExpression) != nil &&
-                        username.range(of: "^([a-zA-Z0-9._]){6,20}$", options: .regularExpression) != nil &&
-                        password.count >= 8 &&
-                        confirm == password
-                    ) {
-                        UserManager.addUser(user:
-                            User(name: "",
-                                 surname: "",
-                                 username: username,
-                                 password: password,
-                                 email: email)
-                        )
-                        Task {
-                            showingFail = await userAuth.login(
-                                username: username,
-                                password: password
+                    Task {
+                        let usernameAvalible = await UserManager.fetchUser(username: username) == nil
+                        let emailAvalible = await UserManager.fetchUser(email: email) == nil
+                        if (
+                            email.range(of: "([0-9]){6}@hkis.edu.hk", options: .regularExpression) != nil &&
+                            emailAvalible &&
+                            username.range(of: "^([a-zA-Z0-9._]){6,20}$", options: .regularExpression) != nil &&
+                            usernameAvalible &&
+                            password.count >= 8 &&
+                            confirm == password
+                        ) {
+                            UserManager.addUser(user:
+                                                    User(name: "",
+                                                         surname: "",
+                                                         username: username,
+                                                         password: password,
+                                                         email: email)
                             )
+                            Task {
+                                showingFail = await userAuth.login(
+                                    username: username,
+                                    password: password
+                                )
+                            }
+                            
+                        } else {
+                            if password.count < 8 {
+                                
+                            }
+                            if confirm != password {
+                                
+                            }
+                            if email.range(of: "([0-9]){6}@hkis.edu.hk", options: .regularExpression) == nil {
+                                
+                            }
+                            if username.range(of: "^([a-zA-Z0-9._]){6,20}$", options: .regularExpression) == nil {
+                                
+                            }
                         }
-                        
                     }
                 } label: {
                     Text("Sign Up")
@@ -80,7 +100,9 @@ struct RegisterView : View {
                     
                 }
                 .alert("Sign Up Failed", isPresented: $showingFail) {
-                    Button("OK", role: .cancel)
+                    Button("OK", role: .cancel) {}
+                } message: {
+                    Text("Something went wrong. Try again later")
                 }
                 .buttonStyle(.borderedProminent)
                 .padding(.bottom, 10)
@@ -102,10 +124,12 @@ struct RegisterView : View {
 struct EmailCheck : View {
     @Binding var email : String
     @State private var valid: Bool? = nil
+    @State private var error: String = ""
     var body: some View {
         HStack {
-            Text("Must be a valid HKIS email")
+            Text(error)
                 .opacity(valid ?? true ? 0 : 1)
+                .foregroundStyle(.red)
                 .padding(.leading, 25)
             Spacer()
         }
@@ -113,7 +137,19 @@ struct EmailCheck : View {
         .foregroundStyle(Color(uiColor: .systemGray4))
         .multilineTextAlignment(.leading)
         .onChange(of: email) {
-            valid = email.range(of: "([0-9]){6}@hkis.edu.hk", options: .regularExpression) != nil
+            Task {
+                valid = email.range(of: "([0-9]){6}@hkis.edu.hk", options: .regularExpression) != nil
+                if !valid! {
+                    error = "Must be a valid HKIS email"
+                }
+                if await UserManager.fetchUser(email: email) != nil {
+                    error = "Email already registered"
+                    valid = false
+                }
+            }
         }
     }
+}
+#Preview {
+    RegisterView()
 }

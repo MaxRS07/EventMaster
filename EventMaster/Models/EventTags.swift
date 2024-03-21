@@ -16,4 +16,8 @@ public enum EventTags : String, CaseIterable {
     case Econ = "Economics"
     case Reveiw = "Review"
     case StudySession = "Study Group"
+    case Music = "Music"
+    case Upcoming = "Upcoming"
+    case Popular = "Popular"
+    case Trending = "Trending"
 }

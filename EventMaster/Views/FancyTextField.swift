@@ -27,6 +27,7 @@ public struct FancyTextField : View {
                 if secure {
                     SecureField(placeholder, text: $text)
                         .frame(width: width - (icon == nil ? 20 : 40))
+                        .disableAutocorrection(true)
                 } else {
                     TextField(placeholder, text: $text)
                         .frame(width: width - (icon == nil ? 20 : 40))

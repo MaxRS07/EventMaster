@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		503FC7BC2BA703FC002A799D /* EventTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FC7BB2BA703FC002A799D /* EventTags.swift */; };
-		503FC7BE2BA72475002A799D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FC7BD2BA72475002A799D /* SearchView.swift */; };
 		504663212BA88F2800F95C37 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504663202BA88F2700F95C37 /* DateExtension.swift */; };
 		504663232BA9279800F95C37 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504663222BA9279800F95C37 /* UserAuth.swift */; };
 		507B55842BA6811A00D09288 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507B55832BA6811A00D09288 /* LoginView.swift */; };
@@ -41,6 +40,7 @@
 		507B55BA2BA6870300D09288 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 507B55B92BA6870300D09288 /* FirebaseStorage */; };
 		507B55BC2BA6870300D09288 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 507B55BB2BA6870300D09288 /* FirebaseStorageCombine-Community */; };
 		507B55BE2BA6A92800D09288 /* UsernameCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507B55BD2BA6A92800D09288 /* UsernameCheck.swift */; };
+		5081954A2BAC564B009B4727 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508195492BAC564B009B4727 /* ContentView.swift */; };
 		50BA5C7E2BA6C09D00A3A800 /* SecurityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BA5C7D2BA6C09D00A3A800 /* SecurityManager.swift */; };
 		50BA5C812BA6C1CC00A3A800 /* BCrypt in Frameworks */ = {isa = PBXBuildFile; productRef = 50BA5C802BA6C1CC00A3A800 /* BCrypt */; };
 		50BA5C832BA6D13400A3A800 /* EventCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BA5C822BA6D13400A3A800 /* EventCard.swift */; };
@@ -48,6 +48,7 @@
 		50BA5C872BA6EFCC00A3A800 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BA5C862BA6EFCC00A3A800 /* UserDetailView.swift */; };
 		50BA5C892BA6FE2700A3A800 /* EventScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BA5C882BA6FE2700A3A800 /* EventScrollView.swift */; };
 		50BA5C8B2BA6FFD200A3A800 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BA5C8A2BA6FFD200A3A800 /* EventManager.swift */; };
+		50BA9C692BA9BFC400525F66 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BA9C682BA9BFC400525F66 /* SearchView.swift */; };
 		50D912F82BA41593000F7D92 /* EventMasterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D912F72BA41593000F7D92 /* EventMasterApp.swift */; };
 		50D912FA2BA41593000F7D92 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D912F92BA41593000F7D92 /* HomeView.swift */; };
 		50D912FE2BA41596000F7D92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50D912FD2BA41596000F7D92 /* Assets.xcassets */; };
@@ -57,22 +58,24 @@
 		50D913142BA418CE000F7D92 /* FancyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D913132BA418CE000F7D92 /* FancyTextField.swift */; };
 		50D913162BA58607000F7D92 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D913152BA58607000F7D92 /* RegisterView.swift */; };
 		50D913192BA5F5A7000F7D92 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D913182BA5F5A7000F7D92 /* UserManager.swift */; };
+		50F8CC572BAA77D200DB8F8A /* EventCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F8CC562BAA77D200DB8F8A /* EventCalendar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		503FC7BB2BA703FC002A799D /* EventTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTags.swift; sourceTree = "<group>"; };
-		503FC7BD2BA72475002A799D /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		504663202BA88F2700F95C37 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		504663222BA9279800F95C37 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserAuth.swift; path = ../../Utilities/UserAuth.swift; sourceTree = "<group>"; };
 		507B55832BA6811A00D09288 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		507B55852BA6865500D09288 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		507B55BD2BA6A92800D09288 /* UsernameCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameCheck.swift; sourceTree = "<group>"; };
+		508195492BAC564B009B4727 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		50BA5C7D2BA6C09D00A3A800 /* SecurityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityManager.swift; sourceTree = "<group>"; };
 		50BA5C822BA6D13400A3A800 /* EventCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCard.swift; sourceTree = "<group>"; };
 		50BA5C842BA6D90900A3A800 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 		50BA5C862BA6EFCC00A3A800 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		50BA5C882BA6FE2700A3A800 /* EventScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScrollView.swift; sourceTree = "<group>"; };
 		50BA5C8A2BA6FFD200A3A800 /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
+		50BA9C682BA9BFC400525F66 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		50D912F42BA41593000F7D92 /* EventMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50D912F72BA41593000F7D92 /* EventMasterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMasterApp.swift; sourceTree = "<group>"; };
 		50D912F92BA41593000F7D92 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 		50D913132BA418CE000F7D92 /* FancyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancyTextField.swift; sourceTree = "<group>"; };
 		50D913152BA58607000F7D92 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		50D913182BA5F5A7000F7D92 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		50F8CC562BAA77D200DB8F8A /* EventCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCalendar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,7 +215,9 @@
 				50BA5C842BA6D90900A3A800 /* EventDetailView.swift */,
 				50BA5C862BA6EFCC00A3A800 /* UserDetailView.swift */,
 				50BA5C882BA6FE2700A3A800 /* EventScrollView.swift */,
-				503FC7BD2BA72475002A799D /* SearchView.swift */,
+				50BA9C682BA9BFC400525F66 /* SearchView.swift */,
+				50F8CC562BAA77D200DB8F8A /* EventCalendar.swift */,
+				508195492BAC564B009B4727 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -331,16 +337,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				50D913192BA5F5A7000F7D92 /* UserManager.swift in Sources */,
+				50BA9C692BA9BFC400525F66 /* SearchView.swift in Sources */,
+				5081954A2BAC564B009B4727 /* ContentView.swift in Sources */,
 				50BA5C852BA6D90900A3A800 /* EventDetailView.swift in Sources */,
 				50BA5C7E2BA6C09D00A3A800 /* SecurityManager.swift in Sources */,
 				50D9130E2BA41664000F7D92 /* User.swift in Sources */,
 				50BA5C872BA6EFCC00A3A800 /* UserDetailView.swift in Sources */,
+				50F8CC572BAA77D200DB8F8A /* EventCalendar.swift in Sources */,
 				507B55BE2BA6A92800D09288 /* UsernameCheck.swift in Sources */,
 				503FC7BC2BA703FC002A799D /* EventTags.swift in Sources */,
 				50D912FA2BA41593000F7D92 /* HomeView.swift in Sources */,
 				507B55842BA6811A00D09288 /* LoginView.swift in Sources */,
 				50D9130C2BA4165A000F7D92 /* Event.swift in Sources */,
-				503FC7BE2BA72475002A799D /* SearchView.swift in Sources */,
 				504663232BA9279800F95C37 /* UserAuth.swift in Sources */,
 				50BA5C892BA6FE2700A3A800 /* EventScrollView.swift in Sources */,
 				50BA5C8B2BA6FFD200A3A800 /* EventManager.swift in Sources */,

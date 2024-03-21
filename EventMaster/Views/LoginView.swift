@@ -59,7 +59,7 @@ struct LoginView : View {
                             .foregroundStyle(Color(uiColor: .systemGray5))
                     }
                     .padding(.bottom, 10)
-                    NavigationLink(destination: RegisterView(userAuth: authManager)) {
+                    NavigationLink(destination: RegisterView()) {
                         Text("Register")
                             .padding(.horizontal, 30)
                             .padding(.vertical, 6)

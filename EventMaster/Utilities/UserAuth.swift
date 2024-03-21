@@ -18,8 +18,9 @@ enum AuthState {
 @MainActor
 class UserAuth : ObservableObject {
     @Published var currentUser: User?
-    @Published var authState: AuthState = .loggedOut
+    @Published var authState: AuthState = .loggedIn
     
+    //TODO: support firebase/google login
     func login(username: String, password: String) async -> Bool {
         let securityManager = SecurityManager()
         guard let user = await UserManager.fetchUser(username: username) else {
@@ -27,10 +28,15 @@ class UserAuth : ObservableObject {
         }
         if securityManager.verify(password, hashedPassword: user.password) {
             currentUser = user
+            authState = .loggedIn
             return true
         } else {
             return false
         }
         
+    }
+    func logout() {
+        authState = .loggedOut
+        currentUser = nil
     }
 }
