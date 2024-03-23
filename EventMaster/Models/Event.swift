@@ -11,7 +11,7 @@ import FirebaseFirestore
 public struct Event : Codable, Identifiable {
     @DocumentID public var id: String?
     
-    var image: Data
+    var images: [Data]
     var name: String
     var desc: String
     var date: String
@@ -19,9 +19,9 @@ public struct Event : Codable, Identifiable {
     var location: String
     var hosts: [String]
     
-    init(id: String? = nil, image: Data, name: String, desc: String, date: String, location: String, tags: [EventTags]? = nil, hosts: [String]) {
+    init(id: String? = nil, images: [Data], name: String, desc: String, date: String, location: String, tags: [EventTags]? = nil, hosts: [String]) {
         self.id = id
-        self.image = image
+        self.images = images
         self.name = name
         self.desc = desc
         self.date = date

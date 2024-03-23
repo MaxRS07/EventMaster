@@ -12,7 +12,7 @@ struct EventCard : View {
     @State var event : Event
     var body: some View {
         VStack {
-            Image(uiImage: .init(data: event.image)!)
+            Image(uiImage: .init(data: event.images.first!)!)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 //.frame(height: 100)
@@ -40,7 +40,7 @@ struct EventSearchCard : View {
     @State var event: Event
     var body: some View {
         HStack {
-            Image(uiImage: .init(data: event.image)!)
+            Image(uiImage: .init(data: event.images.first!)!)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 130)
@@ -67,7 +67,7 @@ struct EventSearchCard : View {
 }
 struct CardPreviews : View {
     @State var event = Event(
-        image: UIImage(named: "Placeholder")!.pngData()!,
+        images: [UIImage(named: "Placeholder")!.pngData()!],
         name: "Tryouts",
         desc: "Tryouts for sports",
         date: Date.now.description,

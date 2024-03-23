@@ -22,6 +22,7 @@ public class UserManager {
             "username" : user.username,
             "password" : SecurityManager().hash(user.password),
             "email" : user.email,
+            "image" : user.image,
         ]
         users.addDocument(data: userData)
     }

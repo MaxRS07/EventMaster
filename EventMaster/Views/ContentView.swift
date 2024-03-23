@@ -14,7 +14,7 @@ struct ContentView : View {
     var body: some View {
         TabView() {
             HomeView(contentLoaded: $contentLoaded).tabItem { Label("Home", systemImage: "house") }.tag(1)
-            UserDetailView().tabItem { Label("Profile", systemImage: "person.crop.circle.fill") }.tag(2)
+            ProfileView().tabItem { Label("Profile", systemImage: "person.crop.circle.fill") }.tag(2)
         }
         .disabled(!contentLoaded)
         .background(Color(.clear).blur(radius: 40))

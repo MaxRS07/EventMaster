@@ -15,13 +15,15 @@ public class EventManager {
     static func removeEvent(id: String) {
         events.document(id).delete()
     }
-    static func addUser(event: Event) {
+    static func addEvent(event: Event) {
         let userData : [String : Any] = [
             "name" : event.name,
             "desc" : event.desc,
-            "image" : event.image,
+            "images" : event.images,
             "date" : event.date,
             "hosts" : event.hosts,
+            "location" : event.location,
+            "tags" : event.tags
         ]
         events.addDocument(data: userData)
     }

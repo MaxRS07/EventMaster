@@ -18,8 +18,8 @@ enum AuthState {
 @MainActor
 class UserAuth : ObservableObject {
     @Published var currentUser: User?
-    @Published var authState: AuthState = .loggedIn
-    
+    @Published var authState: AuthState = .loggedOut
+
     //TODO: support firebase/google login
     func login(username: String, password: String) async -> Bool {
         let securityManager = SecurityManager()

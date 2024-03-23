@@ -17,6 +17,7 @@ public struct User : Codable, Identifiable {
     var username: String
     var password: String
     var email: String
+    var image: Data
     
     var registedEvents: [String]?
 }

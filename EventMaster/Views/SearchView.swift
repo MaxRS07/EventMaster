@@ -43,8 +43,7 @@ struct SearchView : View {
             let filteredQuery = query.components(separatedBy: " ")
             let newQuery = filteredQuery.filter({!eventTags.contains($0)}).joined(separator: " ")
             filtered = objects.filter {
-                ($0.name + " " + $0.desc).range(of: newQuery, options: .caseInsensitive) != nil &&
-                tags.isEmpty ? true : Set(tags) == Set($0.tags)
+                ($0.name + " " + $0.desc).range(of: newQuery, options: .caseInsensitive) != nil && Set(tags) == Set($0.tags)
             }
         }
     }

@@ -66,11 +66,13 @@ struct RegisterView : View {
                             confirm == password
                         ) {
                             UserManager.addUser(user:
-                                                    User(name: "",
-                                                         surname: "",
-                                                         username: username,
-                                                         password: password,
-                                                         email: email)
+                                    User(
+                                        name: "",
+                                        surname: "",
+                                        username: username,
+                                        password: password,
+                                        email: email,
+                                        image: UIImage(systemName: "person.crop.circle")!.pngData()!)
                             )
                             Task {
                                 showingFail = await userAuth.login(

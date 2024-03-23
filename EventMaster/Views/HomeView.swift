@@ -18,7 +18,7 @@ struct HomeView: View {
     
     @State var events: [Event] = [
         Event(
-            image: UIImage(named: "Placeholder")!.pngData()!,
+            images: [UIImage(named: "Placeholder")!.pngData()!],
             name: "Tryouts",
             desc: "Tryouts for sports",
             date: Date.now.formatDate(format: "YYYY MM dd hh:mm"),
@@ -32,6 +32,24 @@ struct HomeView: View {
             ZStack {
                 LinearGradient(colors: [.blue, .cyan], startPoint: .top, endPoint: .bottom)
                     .ignoresSafeArea()
+                VStack {
+                    HStack {
+                        Spacer()
+                        if entranceCompleted {
+                            NavigationLink {
+                                CreateEvent()
+                            } label: {
+                                Image(systemName: "plus")
+                                    .resizable()
+                                    .frame(width: 25, height: 25)
+                                    .foregroundStyle(.white)
+                            }
+                            .padding(.trailing, 30)
+                            .padding(.top, 80)
+                        }
+                    }
+                    Spacer()
+                }
                 if !entranceCompleted {
                     VStack {
                         ProgressView(value: progress)
@@ -42,6 +60,7 @@ struct HomeView: View {
                             .foregroundStyle(.white)
                     }
                     
+                } else {
                 }
                 VStack {
                     Spacer()
@@ -65,6 +84,15 @@ struct HomeView: View {
                                 ScrollView(showsIndicators: false) {
                                     VStack {
                                         HStack {
+                                            Text("Popular")
+                                                .font(.title2)
+                                                .fontWeight(.bold)
+                                                .padding(.leading, 30)
+                                            Spacer()
+                                        }
+                                        EventScrollView(events: events)
+
+                                        HStack {
                                             Text("Trending")
                                                 .font(.title2)
                                                 .fontWeight(.bold)
@@ -81,6 +109,7 @@ struct HomeView: View {
                                             Spacer()
                                         }
                                         EventScrollView(events: events)
+                                            .padding(.bottom, 100)
                                         Spacer()
                                     }
                                     .offset(x: searchQuery == "" ? 0 : width)
